@@ -1,0 +1,28 @@
+#!/usr/bin/python3
+
+import sys
+
+
+def fect():
+
+    try:
+        file1 = sys.argv[1]
+        with open(file1) as fe:
+            for numx in fe:
+                numx = int(numx)
+                if numx % 2 == 0:
+                        print("{}={}*{}".format(numx, numx // 2, 2))
+                        continue
+                el = 3
+                while el < numx // 2:
+                    if numx % el == 0:
+                        print("{}={}*{}".format(numx, numx // el, el))
+                        break
+                    el = el + 2
+                if el == (numx // 2) + 1:
+                    print("{}={}*{}".format(numx, numx, 1))
+    except (IndexError):
+        pass
+
+
+fect()
